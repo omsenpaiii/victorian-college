@@ -16,26 +16,26 @@ export function SiteHeaderClient({ user }: { user: HeaderUser | null }) {
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6">
-      <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/70 bg-white/95 px-4 py-2 shadow-[0_16px_50px_rgba(8,28,63,.14)] backdrop-blur-xl sm:px-5">
+      <nav aria-label="Main navigation" className="mx-auto flex max-w-6xl items-center justify-between rounded-full border border-white/10 bg-[#071b3e]/98 px-4 py-2 shadow-[0_16px_50px_rgba(8,28,63,.22)] backdrop-blur-xl sm:px-5">
         <Link href="/" className="flex min-w-0 items-center gap-3" onClick={() => setOpen(false)}>
           <span className="relative size-12 shrink-0 overflow-hidden rounded-full bg-white">
             <Image src="/vic-logo.png" alt="Victorian College of Knowledge crest" fill sizes="48px" className="object-contain" priority />
           </span>
           <span className="hidden leading-tight sm:block">
-            <span className="block font-serif text-base font-semibold tracking-[.04em] text-[#071b3e]">Victorian College</span>
-            <span className="block text-[10px] font-semibold uppercase tracking-[.24em] text-[#7f6517]">of Knowledge</span>
+            <span className="block font-serif text-base font-semibold tracking-[.04em] text-white">Victorian College</span>
+            <span className="block text-[10px] font-semibold uppercase tracking-[.24em] text-[#e0bb58]">of Knowledge</span>
           </span>
         </Link>
 
         <div className="hidden items-center gap-7 lg:flex">
-          {primaryLinks.map((link) => <Link key={link.href} href={link.href} className="text-sm font-semibold text-[#223451] transition hover:text-[#b78b18]">{link.label}</Link>)}
+          {primaryLinks.map((link) => <Link key={link.href} href={link.href} className="text-sm font-semibold text-white/82 transition hover:text-[#e0bb58]">{link.label}</Link>)}
         </div>
 
         <div className="hidden items-center gap-2 lg:flex">
           {user ? <>
-            <Link href={user.dashboardHref} className="rounded-full px-4 py-2.5 text-sm font-semibold text-[#071b3e]">Portal</Link>
-            <SignOutButton className="rounded-full px-4 py-2.5 text-sm font-semibold text-[#071b3e]">Sign out</SignOutButton>
-          </> : <Link href="/sign-in" className="rounded-full px-4 py-2.5 text-sm font-semibold text-[#071b3e]">Student login</Link>}
+            <Link href={user.dashboardHref} className="rounded-full px-4 py-2.5 text-sm font-semibold text-white">Portal</Link>
+            <SignOutButton className="rounded-full px-4 py-2.5 text-sm font-semibold text-white">Sign out</SignOutButton>
+          </> : <Link href="/sign-in" className="rounded-full px-4 py-2.5 text-sm font-semibold text-white">Student login</Link>}
           <Link href="/courses" className="rounded-full bg-[#c79a24] px-5 py-2.5 text-sm font-bold text-[#071b3e] shadow-[0_10px_24px_rgba(199,154,36,.22)] transition hover:-translate-y-0.5 hover:bg-[#dfb94f]">Explore courses</Link>
         </div>
 

@@ -13,13 +13,13 @@ export default function Home() {
     <section className="relative min-h-[760px] bg-[#edf3f8] px-5 pb-20 pt-32 sm:px-8 lg:pt-40">
       <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[.88fr_1.12fr]">
         <MotionReveal className="relative z-10">
-          <h1 className="max-w-xl font-serif text-6xl leading-[.96] tracking-[-.04em] text-[#071b3e] sm:text-7xl lg:text-[84px]">Knowledge that moves you forward.</h1>
+          <h1 className="max-w-xl text-6xl font-bold leading-[.98] tracking-[-.055em] text-[#071b3e] sm:text-7xl lg:text-[78px]">Knowledge that moves you <span className="text-[#bd8c10]">forward.</span></h1>
           <p className="mt-7 max-w-lg text-lg leading-8 text-[#53647b]">Practical learning, personal support, and clear pathways for your next chapter in Melbourne.</p>
           <div className="mt-9 flex flex-wrap gap-3"><Link href="/courses" className="inline-flex h-13 items-center gap-2 rounded-full bg-[#c79a24] px-6 font-bold text-[#071b3e] shadow-[0_16px_32px_rgba(199,154,36,.24)]">Explore courses <ArrowRight size={18}/></Link><Link href="/about-us" className="inline-flex h-13 items-center rounded-full border border-[#bac7d7] bg-white px-6 font-semibold">Meet the college</Link></div>
           <div className="mt-12 flex items-center gap-4 text-sm font-semibold text-[#53647b]"><span className="grid size-10 place-items-center rounded-full bg-white"><BookOpen size={18} className="text-[#b78b18]"/></span> Built around real life and real progress.</div>
         </MotionReveal>
         <MotionReveal delay={.1} className="relative min-h-[440px] lg:min-h-[590px]">
-          <div className="absolute inset-0 overflow-hidden rounded-[44%_44%_18%_44%/36%_42%_18%_50%] shadow-[0_30px_80px_rgba(7,27,62,.18)]"><Image src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=88" alt="Students learning together in Melbourne" fill priority sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" /></div>
+          <div className="absolute inset-0 overflow-hidden rounded-[44%_44%_18%_44%/36%_42%_18%_50%] shadow-[0_30px_80px_rgba(7,27,62,.18)]"><Image src="https://images.unsplash.com/photo-1570092736002-3ffb6b0575ca?auto=format&fit=crop&w=1600&q=88" alt="People near Flinders Street Station in Melbourne" fill priority sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" /></div>
           <div className="absolute bottom-7 left-3 rounded-3xl bg-[#071b3e] p-5 text-white shadow-xl sm:left-[-26px]"><p className="text-xs uppercase tracking-[.2em] text-[#e0bb58]">Melbourne learning</p><p className="mt-2 max-w-[220px] font-serif text-xl">A modern college experience with a human centre.</p></div>
         </MotionReveal>
       </div>
