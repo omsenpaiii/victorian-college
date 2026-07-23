@@ -1,0 +1,9 @@
+Cert2Security/
+node_modules/
+.next/
+out/
+coverage/
+.tmp/
+.env*
+!.env.example
+*.tsbuildinfo

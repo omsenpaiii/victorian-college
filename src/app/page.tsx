@@ -1,0 +1,41 @@
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, BookOpen, Check, MoveUpRight, Quote } from "lucide-react";
+import { MotionReveal } from "@/components/MotionReveal";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { courses } from "@/lib/courses";
+import { benefits, faqs } from "@/lib/site-content";
+
+export default function Home() {
+  return <main className="overflow-hidden bg-white text-[#071b3e]">
+    <SiteHeader />
+    <section className="relative min-h-[760px] bg-[#edf3f8] px-5 pb-20 pt-32 sm:px-8 lg:pt-40">
+      <div className="mx-auto grid max-w-6xl items-center gap-12 lg:grid-cols-[.88fr_1.12fr]">
+        <MotionReveal className="relative z-10">
+          <h1 className="max-w-xl font-serif text-6xl leading-[.96] tracking-[-.04em] text-[#071b3e] sm:text-7xl lg:text-[84px]">Knowledge that moves you forward.</h1>
+          <p className="mt-7 max-w-lg text-lg leading-8 text-[#53647b]">Practical learning, personal support, and clear pathways for your next chapter in Melbourne.</p>
+          <div className="mt-9 flex flex-wrap gap-3"><Link href="/courses" className="inline-flex h-13 items-center gap-2 rounded-full bg-[#c79a24] px-6 font-bold text-[#071b3e] shadow-[0_16px_32px_rgba(199,154,36,.24)]">Explore courses <ArrowRight size={18}/></Link><Link href="/about-us" className="inline-flex h-13 items-center rounded-full border border-[#bac7d7] bg-white px-6 font-semibold">Meet the college</Link></div>
+          <div className="mt-12 flex items-center gap-4 text-sm font-semibold text-[#53647b]"><span className="grid size-10 place-items-center rounded-full bg-white"><BookOpen size={18} className="text-[#b78b18]"/></span> Built around real life and real progress.</div>
+        </MotionReveal>
+        <MotionReveal delay={.1} className="relative min-h-[440px] lg:min-h-[590px]">
+          <div className="absolute inset-0 overflow-hidden rounded-[44%_44%_18%_44%/36%_42%_18%_50%] shadow-[0_30px_80px_rgba(7,27,62,.18)]"><Image src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=88" alt="Students learning together in Melbourne" fill priority sizes="(min-width:1024px) 55vw, 100vw" className="object-cover" /></div>
+          <div className="absolute bottom-7 left-3 rounded-3xl bg-[#071b3e] p-5 text-white shadow-xl sm:left-[-26px]"><p className="text-xs uppercase tracking-[.2em] text-[#e0bb58]">Melbourne learning</p><p className="mt-2 max-w-[220px] font-serif text-xl">A modern college experience with a human centre.</p></div>
+        </MotionReveal>
+      </div>
+    </section>
+
+    <section className="px-5 py-28 sm:px-8"><div className="mx-auto max-w-6xl"><MotionReveal className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between"><div><p className="text-sm font-bold uppercase tracking-[.18em] text-[#a97f16]">Built for your future</p><h2 className="mt-4 max-w-2xl font-serif text-5xl leading-tight tracking-[-.03em]">Choose a pathway that meets you where you are.</h2></div><Link href="/courses" className="inline-flex items-center gap-2 font-bold text-[#071b3e]">View all courses <MoveUpRight size={18}/></Link></MotionReveal>
+      <div className="mt-14 divide-y divide-[#dfe5ed] border-y border-[#dfe5ed]">{courses.map((course, index) => <MotionReveal key={course.slug} delay={index*.06}><Link href={`/course/${course.slug}`} className="group grid gap-5 py-7 sm:grid-cols-[80px_1fr_180px_32px] sm:items-center"><span className="text-sm font-bold text-[#a97f16]">0{index+1}</span><span><span className="block text-xs font-bold uppercase tracking-[.16em] text-[#718096]">{course.code} · Sample pathway</span><span className="mt-1 block font-serif text-3xl group-hover:text-[#a97f16]">{course.title}</span></span><span className="text-sm text-[#62728a]">{course.category}</span><ArrowRight className="transition group-hover:translate-x-1"/></Link></MotionReveal>)}</div>
+    </div></section>
+
+    <section className="bg-[#071b3e] px-5 py-28 text-white sm:px-8"><div className="mx-auto grid max-w-6xl gap-14 lg:grid-cols-[.95fr_1.05fr] lg:items-center"><MotionReveal><p className="text-sm font-bold uppercase tracking-[.18em] text-[#e0bb58]">Learning built around real life</p><h2 className="mt-5 font-serif text-5xl leading-tight">Progress should feel clear, supported and possible.</h2><p className="mt-6 max-w-lg leading-8 text-white/65">Move from classroom conversations to supported online activities, with a student portal that keeps learning, feedback and next steps together.</p><div className="mt-8 grid gap-4">{benefits.map((item) => <div key={item.title} className="flex gap-4 border-t border-white/10 pt-4"><Check className="mt-1 shrink-0 text-[#e0bb58]"/><div><h3 className="font-bold">{item.title}</h3><p className="mt-1 text-sm leading-6 text-white/55">{item.text}</p></div></div>)}</div></MotionReveal><MotionReveal delay={.1} className="relative min-h-[520px] overflow-hidden rounded-[32px]"><Image src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1400&q=88" alt="Students collaborating in a modern classroom" fill sizes="(min-width:1024px) 50vw, 100vw" className="object-cover"/><div className="absolute bottom-5 left-5 right-5 rounded-[22px] bg-white p-5 text-[#071b3e] shadow-2xl"><p className="text-xs font-bold uppercase tracking-[.16em] text-[#a97f16]">Student portal</p><div className="mt-3 flex items-center justify-between"><p className="font-serif text-2xl">Your learning, all in one place.</p><span className="grid size-11 place-items-center rounded-full bg-[#071b3e] text-white"><ArrowRight size={18}/></span></div></div></MotionReveal></div></section>
+
+    <section className="px-5 py-28 sm:px-8"><div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[.9fr_1.1fr] lg:items-center"><MotionReveal className="relative min-h-[520px] overflow-hidden rounded-[30px]"><Image src="https://images.unsplash.com/photo-1531123897727-8f129e1688ce?auto=format&fit=crop&w=1200&q=86" alt="A prospective student in Melbourne" fill sizes="(min-width:1024px) 45vw, 100vw" className="object-cover"/></MotionReveal><MotionReveal delay={.1}><Quote className="text-[#c79a24]" size={38}/><h2 className="mt-6 font-serif text-5xl leading-tight">A college that knows your name.</h2><p className="mt-7 font-serif text-2xl leading-relaxed text-[#344865]">“The strongest learning environments combine clear expectations with the confidence to ask for help.”</p><p className="mt-6 text-sm leading-7 text-[#65758b]">Illustrative learner story. This is placeholder editorial content and does not represent a currently enrolled student.</p><Link href="/about-us" className="mt-8 inline-flex items-center gap-2 font-bold">Our approach <ArrowRight size={18}/></Link></MotionReveal></div></section>
+
+    <section className="bg-[#edf3f8] px-5 py-28 sm:px-8"><div className="mx-auto max-w-6xl"><div className="grid gap-12 lg:grid-cols-[.75fr_1.25fr]"><MotionReveal><h2 className="font-serif text-5xl">Questions, answered simply.</h2><p className="mt-5 leading-7 text-[#607087]">We will keep verified information clear as course and campus details are finalised.</p></MotionReveal><div className="divide-y divide-[#cfd9e5] border-y border-[#cfd9e5]">{faqs.map((faq) => <details key={faq.question} className="group py-5"><summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-serif text-xl"><span>{faq.question}</span><span className="text-[#a97f16] group-open:rotate-45">+</span></summary><p className="max-w-2xl pt-4 leading-7 text-[#607087]">{faq.answer}</p></details>)}</div></div>
+      <MotionReveal className="mt-24 flex flex-col items-start justify-between gap-7 rounded-[32px] bg-[#071b3e] p-8 text-white sm:p-12 lg:flex-row lg:items-center"><div><p className="text-sm font-bold uppercase tracking-[.18em] text-[#e0bb58]">Your next chapter</p><h2 className="mt-4 max-w-2xl font-serif text-4xl sm:text-5xl">Start with a conversation about where you want to go.</h2></div><Link href="/contact" className="shrink-0 rounded-full bg-[#c79a24] px-6 py-4 font-bold text-[#071b3e]">Contact the college</Link></MotionReveal>
+    </div></section>
+    <SiteFooter />
+  </main>;
+}
